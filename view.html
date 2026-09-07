@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>View | Prizzy's Golden Bite</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a class="logo" href="index.html">
+            <span class="logo-circle">P</span>
+            <span><b>Prizzy's</b><small>Golden Bite</small></span>
+            </a>
+        <a class="gold-btn" href="javascript:history.back()">← Back</a>
+        </header>
+        <main class="viewer">
+        <img id="viewImage" alt="">
+        <div>
+            <span class="eyebrow" id="viewType"></span>
+            <h1 id="viewName"></h1>
+            <p>Beautifully presented by Prizzy's Golden Bite.</p>
+            <a id="viewWA" class="gold-btn">Enquire on WhatsApp</a>
+            </div>
+            </main>
+        <script>
+        const p=new URLSearchParams(location.search);
+        const n=p.get('name')||'Prizzy\'s Golden Bite';
+        const t=p.get('type')||'';
+        const i=p.get('img')||'images/pie4.png';
+        document.getElementById('viewName').textContent=n;document.getElementById('viewType').textContent=t;
+        document.getElementById('viewImage').src=i;
+        document.getElementById('viewWA').href='https://wa.me/2349024352168?text='+encodeURIComponent("Hello Prizzy's Golden Bite, I am interested in "+n+".");
+        </script>
+        </body>
+        </html>
